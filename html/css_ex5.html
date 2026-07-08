@@ -4,22 +4,46 @@
 	<meta charset="UTF-8">
 	<title>연습문제</title>
 	<style>
-		#container {  /* 전체 콘텐츠를 감싸는 div */
-			width:650px;  /* 너비 */
-			margin:0 auto;  /* 가로로 중앙에 배치 */
-			padding:5px;	/* 테두리와 내용 사이의 패딩 여백 */		
+		#container{
+			/* background-color: red; */
+			margin: 0 auto; /* 가로 중양 정렬 */
+			
+			width: 700px;
+		}		
+		h1{
+			color: #fff;
+			background-color: black;
+			font-size: 1.5rem;
+			padding: 10px;
+			margin-top: 0px;
+		}	
+		#check{
+			border: 1px solid #ccc;
 		}
-		#check {   /* 텍스트 부분을 감싸는 div */
-			width:640px;  /* 너비 - 그림 너비 값에 맞춤 */
-			border:1px solid #ccc;  /* 테두리 */
-		}		
-		h1 {
-			color: white; /* 글자색 */
-			font-size: 1em; /* 글자 크기 */
-			background: #222; /* 배경색 */
-			margin: 0; /* 제목과 다른 요소 간의 마진 여백 */
-			padding: 10px; /* 테두리와 제목 텍스트 사이의 패딩 여백 */
-		}		
+	</style>
+	<style>
+		.tap_title{
+			border: 1px solid;
+			display: inline-block;
+			width:100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			margin: 0px;
+			float: left;
+			border-right: none;
+			border-bottom: none;
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+		}
+		.tap_title:last-of-type{
+			border-right: 1px solid #000;
+			background-color: red;
+		}
+		.tap_contents{
+			clear: both;
+			border:1px solid;
+		}
 	</style>
 </head>
 
@@ -28,7 +52,7 @@
 		<!--
 		경로 앞에 아무것도 없는경우 현재 파일의 위치를 기준으로 경로를 찾아갑니다.
 		-->
-		<img src="/html/img/top.jpg" alt="가정용 꿀사과 - 흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다. 질좋은 사과를 저렴하게 즐겨보세요">		
+		<img src="/html/img/top.jpg" width="100%" alt="가정용 꿀사과 - 흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다. 질좋은 사과를 저렴하게 즐겨보세요">		
 		<div id="check">
 			<h1>확인하세요</h1>
 			<h2>주문 및 배송</h2>
@@ -44,5 +68,20 @@
 			<span>상담시간 : 오전 9시 ~ 오후 6시 (토/일, 공휴일 휴무)</span></p>
 		</div>
 	</div>
+
+<div class="tab_menu">
+	<div class="tap_title">메뉴1</div>
+	<div class="tap_title">메뉴1</div>
+	<div class="tap_contents">
+		<ul>
+			<li>컨텐츠1</li>
+			<li>컨텐츠2</li>
+			<li>컨텐츠3</li>
+			<li>컨텐츠4</li>
+			<li>컨텐츠5</li>
+		</ul>
+
+	</div>
+</div>
 </body>
 </html>
