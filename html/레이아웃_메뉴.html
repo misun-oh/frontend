@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .badge{
+            /* 
+            position 속성
+                
+            */
+            position: relative; /* 기준이 되는 상자*/
+            top: 100px;
+            left: 100px;
+
+            border: none;
+            padding: 10px 20px;
+            
+        }
+        .badge_img{
+            
+            background-color: red;
+            border-radius: 50%;
+            padding: 5px;
+            position: absolute; /* 기준이 되는 상자로 부터 위치를 잡음*/
+            top: -15px;
+            right: -15px;
+            /* bottom: ; */
+            /* left: ; */
+        }
+
+        .fixedbox{
+            position: fixed; /* 위치 고정*/
+            top: 10px;
+            right: 10px;
+            background-color: blue;
+        }
+        body {
+            height: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixedbox">
+        고정위치
+    </div>
+
+    <button class="badge">
+        버튼
+        <div class="badge_img">
+            99
+        </div>
+    </button>
+
+
+</body>
+</html>

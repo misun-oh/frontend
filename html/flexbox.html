@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플렉스 박스</title>
+    <style>
+        .container{
+            /* 축을 기준으로 배치 */
+            display: flex;
+            /* 축을 지정 
+                기본값 : row
+            */
+            /* flex-direction: column-reverse; */
+            
+            /* 주축의 정렬 */
+            justify-content: space-around;
+            /* 교차축의 정렬 */
+            align-items: start;
+            border: 1px solid #333;
+            /* 플렉스 박스의 기본값을 한줄에 모두 표현하는것 */
+            /* 요소를 여러줄에 표현 */
+            flex-flow: wrap;
+
+        }
+        .box{
+            display: flex;
+            border: 1px solid red;
+            width: 400px;
+            height: 200px;
+
+            
+        }
+        .box_img{
+            width: 30%;
+            height: 100%;
+                        
+        }
+        .box_text{
+            width: 70%;
+            height: 100%;
+            background-color: yellow;
+        }
+
+        .box_img img{
+            width: 80%;
+            border-radius: 50%;
+        }
+        .red{
+            background-color: red;
+        }
+        .f2{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        
+        <div class="box">
+            <div class="box_img ">
+                <img src="img/pf.jpg" alt="">
+            </div>
+            <div class="box_text">
+                <p>자주 묻는 질문</p>
+                <p>궁금한 사항이 있으면 FAQ를 확인해주세요.</p>
+            </div>
+        </div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box red f2">4</div>
+    </div>
+
+</body>
+</html>
