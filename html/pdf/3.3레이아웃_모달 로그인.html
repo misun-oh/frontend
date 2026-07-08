@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      color: #333;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;                          /* top/right/bottom/left 모두 0 → 화면 전체 덮기 */
+      background: rgba(10, 14, 20, 0.6); /* 반투명 검정 */
+      display: flex;
+      align-items: center;      /* 세로 가운데 */
+      justify-content: center; /* 가로 가운데 */
+      z-index: 1000;          /* 페이지의 다른 요소보다 위에 */
+    }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px;
+      /* 가로거리, 세로거리, 번짐정도, 확장크기(그림자 면적을 더 크게) */
+      /* box-shadow: 0 0px 50px 10px rgba(0,0,0,0.28); */
+      box-shadow: 0 5px 45px rgba(0,0,0,0.28);;
+      max-width: 340px;
+      width: 100%;
+
+      height: 320px;
+
+      position: relative;
+      /* z-index: 999; */
+    }
+
+    #modalClose{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background-color: #fff;
+      border: none;
+      font-size: 2.4rem;
+      color: #555;
+    }
+    
+    .modal-box h3{
+      margin: 0px;
+      font-size: 1.2rem;
+    }
+    .modal-box h6{
+      margin: 0px 0px 30px;
+      color: #888;
+      font-size: 0.8rem;
+
+    }
+    .modal-box input{
+      width: 100%;
+      border: 1px solid #ccc;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      padding: 5px 10px;
+      margin: 5px 0px;
+    }
+    
+    .modal-box input:focus{
+      /* 브라우저 기본 outline(외곽선) 스타일 제거 */
+      outline: none;
+      border-color: blue;
+    }
+    .btn{
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      padding: px;
+      border: none;
+      margin-top: 20px;
+      background-color: blue;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 8px;
+    }
+
+    /* 화면에서 보이지 않도록 처리 */
+    .modal-box {
+      visibility: hidden;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .modal-backdrop {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    /* 클래스 속성을 통해서 보여지도록 설정 */
+    /* 자바스크립트
+       document.querySelector(".modal-backdrop").classList.add("show") */
+    .modal-backdrop.show  { 
+      opacity: 1; 
+      visibility: visible;
+    }       
+    /* 그 다음 프레임에 페이드인 */
+    .modal-backdrop.show .modal-box {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- 모달을 여는 버튼 -->
+<button id="loginTrigger">로그인</button>
+
+<!-- 평소엔 숨겨져 있는 백드롭 + 모달 -->
+<div class="modal-backdrop show" id="modalBackdrop">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+    <h3 id="modalTitle">로그인</h3>
+    <h6>이메일과 비밀번호를 입력하세요</h6>
+    <form id="loginForm">
+      <label for="email">이메일</label>
+      <input type="email" id="email" required>
+
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" required>
+
+      <button type="submit" class="btn">로그인</button>
+    </form>
+  </div>
+</div>
+
+
+
+</body>
+</html>

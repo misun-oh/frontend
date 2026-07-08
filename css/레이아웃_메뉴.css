@@ -81,7 +81,7 @@ body {
     공백 
     > 
 */
-.menu_item:hover > .submenu, .menu_item:hover{
+.menu_item:hover  .submenu, .menu_item:hover{
 
     background-color: blanchedalmond;
     display: block;
