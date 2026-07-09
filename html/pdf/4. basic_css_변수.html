@@ -29,10 +29,7 @@
   }
 
 
-  [data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #f5f5f5;
-  }
+  
 
   body {
     background-color: var(--bg-color);
@@ -58,8 +55,15 @@
     font-family: var(--font-main);
     background-color: var(--box-color);
   }
+  
+  /* 속성을 이용해서 요소를 선택 */
+  [data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f5f5f5;
+  }
   </style>
 </head>
+<!-- <태그이름 속성이름=속성값> -->
 <body class="m-0 ml-6" data-theme="dark">
 
 <div class="box">하늘색 배경</div>

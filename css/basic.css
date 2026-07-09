@@ -62,7 +62,15 @@ body{
    2. 색상 변수 — 프로젝트 전체에서 재사용할 색을 한 곳에 등록
    :root에 등록해두면 var(--primary) 처럼 어디서든 꺼내 쓸 수 있음
    ============================================================ */
+
+/* 가져다 사용할 수 있는 클래스를 정의 */
+
+/* 
+  변수 
+  --변수명 : 값;
+*/
 :root{
+  /* 색상 */
   --primary: #2F49E8;
   --secondary: #0EA5A0;
   --accent: #FF5A36;
@@ -84,6 +92,7 @@ body{
   --space-5: 24px;
   --space-6: 32px;
   --space-7: 48px;
+
 }
 
 
@@ -104,6 +113,7 @@ body{
 .w-300px{ width: 300px; }
 .w-400px{ width: 400px; }
 .w-500px{ width: 500px; }
+.w-600px{ width: 600px; }
 
 .max-w-100 { max-width: 100%; }
 .max-w-sm  { max-width: 400px; }
@@ -224,6 +234,11 @@ body{
    스케일: 0=0, 1=4px, 2=8px, 3=12px, 4=16px, 5=24px, 6=32px, 7=48px
    ============================================================ */
 /* margin: 전체 */
+/*
+ m- 4방향 모두 
+ mt mb ml mr - 한방향씩 
+ my mz - 상하 좌우
+*/
 .m-0{ margin: var(--space-0); } .m-1{ margin: var(--space-1); }
 .m-2{ margin: var(--space-2); } .m-3{ margin: var(--space-3); }
 .m-4{ margin: var(--space-4); } .m-5{ margin: var(--space-5); }
