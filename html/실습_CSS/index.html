@@ -30,6 +30,49 @@
       /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.384);  */
     }
   </style>
+
+  <!-- 스크립트 작성 -->
+  <!-- src 속성을 이용해서 외부 문서로 연결할 경우 태그안에 스크립트 실행 안됨!!!!!-->
+  <script src=""></script>
+  <script>
+    // 선택자를 이용해서 요소를 선택 
+    // 무조건 하나만, 여러개 선택시 querySelectorAll() 사용
+    // 요소가 화면에 올라오기전에 스크립트가 실행 되면 화면의 요소를 선택 할 수 없다!!
+    let grid = document.querySelector('.grid');
+    console.log('바로 선택', grid);
+
+    // --> load 이벤트가 발생 하면 실행될수 있도록 처리
+    // load : 리소스 로드 완료 - 화면이 모두 불러들여지면 실행
+    window.addEventListener('load', function(){
+      // 순서에 상관없이 실행 할 수 있음
+      let grid = document.querySelector('.grid');
+      console.log('load이벤트를 통해 선택', grid);
+      //grid.innerText = '텍스트 입력';
+
+      // 함수를 호출
+      // 6번 호출
+      for(let i=0;i<6;){
+
+      }
+      grid.innerHTML = make_card();
+
+
+    })
+
+
+    // 1장의 카드를 만들어서 반환
+    function make_card(){
+      return `<article class="card rounded-lg overflow-hidden flex-2" data-rating="9.2">
+          <img class="w-100 h-300px object-cover" src="https://picsum.photos/seed/movie1/300/400" alt="스텔라 오디세이 포스터">
+          <div class="card-body bg-white px-3 py-5 fs-lg">
+            <h3>스텔라 오디세이</h3>
+            <p class="genre text-gray mb-">SF · 액션</p>
+            <span class="badge">NEW</span>
+          </div>
+        </article>`
+    }
+
+  </script>
 </head>
 <body class="bg-light">
 
