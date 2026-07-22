@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체
+        let movie = {
+            title : '영화'
+            , rating : 9.2
+        }
+
+        // 배열 - 여러개를 담을수 있다!
+        let movies = [
+            {title : '영화1', rating : 9.2}
+            ,{titl : '영화2', rating : 3.2}
+            ,{title : '영화3', rating : 7.2}
+        ]
+
+        // 함수를 이용해서 객체를 만들기
+        // 1. 팩토리 방식 : 함수 내부에서 객체를 만들어서 반환
+        function createMovie(title, rating){
+            let movie = {
+                title: title
+                , rating : rating
+            }
+            return movie;
+        }
+
+        let movies_function = [createMovie('영화1', 9.2)
+                                , createMovie('영화2', 3.2)
+                                , createMovie('영화3', 7.2)]
+        
+        console.log(movies_function, movies_function)
+        console.log(createMovie('영화4',3.3))
+
+        // 2. 생성자 함수를 이용
+    </script>
+</body>
+</html>

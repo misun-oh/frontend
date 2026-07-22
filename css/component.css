@@ -1,11 +1,10 @@
-/* 
+/* ======================================================
 1. 반응형 메뉴 
 
 기본스타일 정의 - 작은화면(핸드폰)을 기준으로 
     -> 화면이 커지면 미디어쿼리를 이용해서 스타일을 지정
-
+=========================================================
 */
-
 
 header{
     position: relative;
@@ -40,7 +39,7 @@ header{
 }
 
 .has-submenu {
-    position: relative;
+    /* position: relative; */
 }
 .submenu > li{
     padding: 5px 20px;
@@ -53,7 +52,7 @@ header{
 
 .has-submenu > a::after{
     /* 레이아웃 크기를 가질수 없는 인라인 요소에서는 적용이 안됨 */
-    display: inline-block;
+    /* display: inline-block; */
     
     /* 추가하고 싶은 컨텐츠를 쌍따옴표 안에 작성 */
     content: "▼";
@@ -86,7 +85,9 @@ header{
     max-height: 120px;
 }
 
-/* 2. card */
+/* ========================================
+2. card 
+===========================================*/
 .card{
     /* 단위를 지정하지 않으면 동작하지 않음 (px등) */
     transition: transform 0.5s ease, box-shadow 0.5s ease;

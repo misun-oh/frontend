@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function exception(){
+            try{
+                console.log(Null.test())
+
+            } catch(error){
+                console.log(error)
+            }
+        }
+        exception()
+        function init(){
+            fetch('json/movies.json')
+            .then(res => res.json())
+            .then(res=>{
+                console.log(res)
+            })
+        }
+        init()
+
+        async function loadMovies() {
+        try {
+            const response = await fetch("json/movie.json");   // 같은 폴더의 파일 요청
+            if (!response.ok) throw new Error("파일을 불러올 수 없습니다: " + response.status);
+
+            const movies = await response.json();   // 응답 텍스트를 자동으로 JS 배열/객체로 변환!
+            console.log(movies);          // 진짜 배열 — movies[0].title 처럼 바로 접근 가능
+            console.log(movies.length);   // 10
+
+            return movies;
+        } catch (error) {
+            console.log("로드 실패:", error.message);
+        }
+        }
+
+        //loadMovies();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
