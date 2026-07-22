@@ -30,14 +30,35 @@
             return movie;
         }
 
-        let movies_function = [createMovie('영화1', 9.2)
+        let movies_arr = [createMovie('영화1', 9.2)
                                 , createMovie('영화2', 3.2)
                                 , createMovie('영화3', 7.2)]
         
-        console.log(movies_function, movies_function)
+        // 배열에 요소를 추가 하기
+        // -------------------------------------
+        movie = createMovie('영화4',3.3)
+        movies_arr.push(movie)
+        // -------------------------------------
+        movies_arr.push(createMovie('영화4',3.3))
+
+        
+        console.log('movies_arr', movies_arr)
         console.log(createMovie('영화4',3.3))
 
         // 2. 생성자 함수를 이용
+        // this키워드를 이용해서 속성을 만듬 
+        //    -> new 키워드를 이용해서 객체를 생성
+        // 매개변수로 값을 받아서 객체를 초기화 
+        function Movie(title, rating){
+            // new키워드가 사용되었는지 확인
+            console.log('new.target', new.target)
+            // 거짓일때 실행 되게 하려면 앞에 !를 붙여주세요!
+            if(!new.target) 
+                throw new Error('new 키워드가 없습니다. 객체 생성할수 없어요!!!!')
+            this.title = title
+            this.rating = rating
+            
+        }
     </script>
 </body>
 </html>
